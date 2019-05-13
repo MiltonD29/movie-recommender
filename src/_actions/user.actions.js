@@ -1,5 +1,5 @@
 import { userConstants } from '../_constants';
-import { userService } from '../services';
+import { userService } from '../_services';
 import { alertActions } from './alert.actions';
 import { history } from '../_helpers';
 
@@ -13,7 +13,7 @@ export const userActions = {
 /*=============================================
 =            SIGNIN FUNCTION            =
 =============================================*/
-function signin(user) {
+function signin(email, password) {
 
   function request(user) {
     return {
@@ -37,11 +37,12 @@ function signin(user) {
   }
 
   return dispatch => {
-    dispatch(request({ user }));
+    dispatch(request({ email }));
 
-    userService.signin(user)
+    userService.signin(email, password)
     .then((res) => {
       dispatch(success(res));
+      console.log(history)
       history.push('/');
     }).catch((error) => {
       dispatch(failure(error));
