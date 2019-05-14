@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const BackToHome = () => (
   <Link
-    className="button is-default"
+    className="button is-rounded"
     to='/'
     role="button"
   >

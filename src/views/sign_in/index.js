@@ -9,12 +9,18 @@ class SignInPage extends Component {
   constructor(props){
     super(props);
 
-    // reses login status
+    // reset login status
+    this.props.dispatch(userActions.signout());
+
     this.state = {
       email: '',
       password: '',
       submitted: false
     }
+  }
+
+  componentWillMount() {
+    
   }
 
   handleChange = (e) => {
@@ -39,7 +45,7 @@ class SignInPage extends Component {
     const { loggingIn } = this.props;
     const { email, password, submited } = this.state;
     return (
-      <section className="hero is-fullheight">
+      <section className="signin hero is-fullheight">
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="column is-6 is-offset-3">

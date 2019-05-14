@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 // Components
 import Movie from './Movie';
 
+const imageUrl = 'https://image.tmdb.org/t/p/w342/'
+
 class MoviesList extends Component {
   static propTypes = {
     movies: PropTypes.array
@@ -16,11 +18,11 @@ class MoviesList extends Component {
           movies.map( movie => {
             return (
               <Movie
-                key={ movie.imdbID }
-                id={ movie.imdbID }
-                title={ movie.Title }
-                year={ movie.Year }
-                poster={ movie.Poster }
+                key={ movie.id }
+                id={ movie.id }
+                title={ movie.title }
+                overview={ movie.overview }
+                poster={ imageUrl + movie.poster_path }
               />
             )
           })

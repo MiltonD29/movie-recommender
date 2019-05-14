@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // Components
-import { Title } from '../components/Title';
-import SearchForm from '../components/SearchForm';
-import MoviesList from '../components/MoviesList';
+import { Title } from '../../_components/Title';
+import SearchForm from '../../_components/SearchForm';
+import MoviesList from '../../_components/MovieList';
 
 class Search extends Component {
   state = {

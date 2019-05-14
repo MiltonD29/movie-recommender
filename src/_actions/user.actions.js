@@ -42,7 +42,6 @@ function signin(email, password) {
     userService.signin(email, password)
     .then((res) => {
       dispatch(success(res));
-      console.log(history)
       history.push('/');
     }).catch((error) => {
       dispatch(failure(error));

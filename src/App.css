@@ -24,7 +24,7 @@
 =            SIGN IN            =
 =============================================*/
 
-.hero {
+.signin {
   background-image: url('/assets/img/bg_2.jpg')
 }
 
@@ -52,6 +52,23 @@
 }
 
 /*=====  End of SIGN IN  ======*/
+
+
+
+/*=============================================
+=            HOME            =
+=============================================*/
+
+.home {
+  background: linear-gradient(-120deg, #215b33, #221f1f, #f5f5f1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*=====  End of HOME  ======*/
+
 
 
 
@@ -93,6 +110,13 @@
   border-radius: 10px;
   outline: none;
   cursor: pointer;
+}
+
+.list {
+  margin-top: 1.5rem;
+  max-height: 35vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @keyframes showForm {
@@ -273,8 +297,8 @@
 =============================================*/
 
 .Detail {
-  background-color: #000;
-  color: white;
+  
+  color: black;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -282,16 +306,17 @@
 
 .Detail__column .tag {
   margin-right: 5px;
+  color: #000;
 }
 
 .Detail p {
-  color: white;
+  
   margin-bottom: 10px;
 }
 
 .Detail strong,
 .Detail__title {
-  color: #fff !important;
+  
 }
 
 .Detail__card {
@@ -331,7 +356,7 @@
   top: 0;
   left: 0;
   opacity: .8;
-  box-shadow: 0px 15px 15px rgba(255,255,255,1);
+  box-shadow: 0px 15px 15px rgba(0,0,0,1);
   filter: blur(20px);
   transform: scale(0.8) translateY(-20px);
 }
