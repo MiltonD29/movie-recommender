@@ -1,33 +1,396 @@
+
+/*=============================================
+=            GENERAL                        =
+=============================================*/
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.button {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notification {
+  margin-bottom: 0rem !important;
+  border-radius: 0px;
+}
+
+/*=====  End of GENERAL  ======*/
+
+
+
+/*=============================================
+=            SIGN IN            =
+=============================================*/
+
+.signin {
+  background-image: url('/assets/img/bg_2.jpg')
+}
+
+.signin-button {
+  background-color: #215b33 !important;
+  color: #fff !important;
+  border: 0px !important;
+}
+
+.signin-box {
+  background-color: rgba(0,0,0,0.75) !important;
+  height: 75vh;
+  padding: 3.5rem !important;
+}
+
+.signin-box-footer {
+  margin-top: 1rem !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.signin-box-footer > .column {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+/*=====  End of SIGN IN  ======*/
+
+
+
+/*=============================================
+=            HOME            =
+=============================================*/
+
+.home {
+  background: linear-gradient(-120deg, #215b33, #221f1f, #f5f5f1);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*=====  End of HOME  ======*/
+
+
+
+
+/*=============================================
+=            SEARCH FORM            =
+=============================================*/
+
+.SearchForm-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.SearchForm__inputContainer {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
+.SearchForm__input {
+  border: none;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  outline: none;
+  font-weight: 700;
+  font-size: 1rem;
+  animation: showForm 0.4s forwards
+}
+
+.SearchForm__submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.4rem;
+  border: none;
+  background-color: transparent;
+  height: 46px;
+  width: 46px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 1.5rem;
+  max-height: 35vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@keyframes showForm {
   from {
-    transform: rotate(0deg);
+    transform: scale(0.7);
+    opacity: 0
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
+    opacity: 1;
   }
 }
+
+/*=====  End of SEARCH FORM  ======*/
+
+
+
+/*=============================================
+=            SEARCH            =
+=============================================*/
+
+.Search {
+  width: 100%;
+  text-align: center;
+}
+
+.Search__container {
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Search__form {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 15px;
+}
+
+.Search__description {
+  margin-top: 20px;
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+}
+
+/*=====  End of SEARCH  ======*/
+
+
+
+/*=============================================
+=            MOVIE LIST            =
+=============================================*/
+
+.MovieList__results {
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*=====  End of MOVIE LIST  ======*/
+
+
+
+/*=============================================
+=            MOVIE            =
+=============================================*/
+
+.Movie__movie {
+  position: relative;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.Movie__movieImg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.Movie__movieImg_blured {
+  position: absolute;
+  z-index: 1;
+  opacity: .8;
+  filter: blur(15px);
+  transform: scale(0.9) translateY(20px);
+}
+
+.Movie__movieContent {
+  position: absolute;
+  z-index: 3;
+  left: 15px;
+  right: 15px;
+  bottom: 20px;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.8);
+  /* background-color: black; */
+  border-radius: 15px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease
+}
+
+.Movie__movie:hover .Movie__movieContent {
+  opacity: 1;
+}
+
+.Movie__movieContent-title  {
+  font-weight: 700;
+}
+
+.Movie__movieContent-year {
+  font-size: 0.8rem;
+}
+
+.Movie__credits {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.Movie__credits:hover {
+  opacity: 1
+}
+
+@media screen and (max-width: 768px) {
+  .Movie__movie {
+    width: calc(100% / 3);
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .Movie__movie {
+    width: 50%;
+    padding: 7px;
+  }
+
+  .Movie__movieImg {
+    border-radius: 10px;
+  }
+
+  .Movie__container {
+    overflow-x: hidden;
+  }
+
+  .Movie__movieImg_blured {
+    transform: scale(0.9) translateY(15px);
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .Movie__movie {
+    width: 95%;
+  }
+}
+
+/*=====  End of MOVIE  ======*/
+
+
+
+/*=============================================
+=            DETAIL            =
+=============================================*/
+
+.Detail {
+  
+  color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.Detail__column .tag {
+  margin-right: 5px;
+  color: #000;
+}
+
+.Detail p {
+  
+  margin-bottom: 10px;
+}
+
+.Detail strong,
+.Detail__title {
+  
+}
+
+.Detail__card {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  box-sizing: border-box;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.Detail__column {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  box-sizing: border-box;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.Detail__description {
+  text-align: left;
+}
+
+.Detail__poster {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.Detail__poster_blured {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .8;
+  box-shadow: 0px 15px 15px rgba(0,0,0,1);
+  filter: blur(20px);
+  transform: scale(0.8) translateY(-20px);
+}
+
+.Detail__star {
+  margin-right: 5px
+}
+
+.Detail__footer {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .Detail__card {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .Detail__column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .Detail__description {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .Detail__poster_blured {
+    opacity: 0.5;
+    filter: blur(15px);
+    transform: translateY(15px);
+  }
+}
+
+/*=====  End of DETAIL  ======*/
